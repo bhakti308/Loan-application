@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="ValidateOTP.css">
+   <script src="ValidateOTP.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  
+    
+    <title>Validate OTP</title>
+</head>
+<body onload="displayval(); send_Mail(); reset(); return false; ">
+    <h1 class="heading">Validate Email-ID</h1>
+    <div class="box">
+        Dear <label id="nm"></label><br><br>
+        &nbsp;&nbsp;Thank you for your inquiry. A 4 digit verification number has been sent  to <br> your email: <label id="ml"></label><br>
+        <br>Only 3 Attempts are allowed to verify your email id Otherwise you will be <br> move out from this Application<br>
+        please enter it in the following box and submit for confirmation:<br>
+
+        <input type="text" id="Enter_otp" onkeyup="ErrLbl();" required/> &nbsp;&nbsp;
+        <label class="words" id="err" ></label><br>
+        <button id="subbtn" type="button" onclick="btnClickCount(); Validate_OTP();">Submit</button><br>
+    </div>
+</body>
+</html>

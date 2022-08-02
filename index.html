@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>Loan Application</title>
+</head>
+<body onload="createCaptcha()" >
+    <h1 class="heading">Loan Application</h1>
+    <div class="container">
+        <form method="get" action="ValidateOTP.html">
+            <label>Full Name: </label><br>
+            <input class="inputbox" type="text" id="fname" name="fname" pattern="^((?:\s*[A-Za-z]\s*){4,})$" title="Name should have at least 4 characters." required /><br><br>
+
+            <label>Email: </label><br>
+            <input class="inputbox" type="email" id="mail" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required /><br><br>
+
+            <label>Pancard Number: </label><br>
+            <input class="inputbox" type="text" id="pan" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" title="Please Enter Pan Number In Format 'ABCDE1234F'" required /><br><br>
+
+            <label>Loan Amount: </label><br>
+            <input class="inputbox" type="text" id="number" name="amnt" pattern="[0-9]{1,9}" title="Please Enter Ammount Upto 9 Digits" onkeyup="myfun()" required /><br><br>
+
+
+            <label class="words" id="words"></label><br>
+
+             <input type="text" id="CaptchaView" readonly onchange="wrongCaptcha()" />
+             <button id="btnrefresh" type="button" onclick="createCaptcha();wrongCaptcha();">Refresh</button><br>
+            
+             <input type="text" id="CaptchaEnter" onchange="wrongCaptcha();" required/><br>
+             <label class="words" id="err" ></label><br>
+            
+             <button type="submit" class="subbtn" onclick="someFunctions();" >Submit</button>
+
+        </form>
+    </div>
+</body>
+</html>
